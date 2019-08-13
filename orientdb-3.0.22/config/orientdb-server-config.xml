@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<orient-server>
+    <handlers>
+        <handler class="com.orientechnologies.orient.server.hazelcast.OHazelcastPlugin">
+            <parameters>
+                <parameter value="${distributed}" name="enabled"/>
+                <parameter value="${ORIENTDB_HOME}/config/default-distributed-db-config.json" name="configuration.db.default"/>
+                <parameter value="${ORIENTDB_HOME}/config/hazelcast.xml" name="configuration.hazelcast"/>
+            </parameters>
+        </handler>
+        <handler class="com.orientechnologies.orient.server.handler.OJMXPlugin">
+            <parameters>
+                <parameter value="false" name="enabled"/>
+                <parameter value="true" name="profilerManaged"/>
+            </parameters>
+        </handler>
+        <handler class="com.orientechnologies.orient.server.handler.OAutomaticBackup">
+            <parameters>
+                <parameter value="false" name="enabled"/>
+                <parameter value="${ORIENTDB_HOME}/config/automatic-backup.json" name="config"/>
+            </parameters>
+        </handler>
+        <handler class="com.orientechnologies.orient.server.handler.OServerSideScriptInterpreter">
+            <parameters>
+                <parameter value="true" name="enabled"/>
+                <parameter value="SQL" name="allowedLanguages"/>
+            </parameters>
+        </handler>
+        <handler class="com.orientechnologies.orient.server.handler.OCustomSQLFunctionPlugin">
+            <parameters>
+                <parameter value="${ORIENTDB_HOME}/config/custom-sql-functions.json" name="config"/>
+            </parameters>
+        </handler>
+    </handlers>
+    <network>
+        <sockets>
+            <socket implementation="com.orientechnologies.orient.server.network.OServerTLSSocketFactory" name="ssl">
+                <parameters>
+                    <parameter value="false" name="network.ssl.clientAuth"/>
+                    <parameter value="config/cert/orientdb.ks" name="network.ssl.keyStore"/>
+                    <parameter value="password" name="network.ssl.keyStorePassword"/>
+                    <parameter value="config/cert/orientdb.ks" name="network.ssl.trustStore"/>
+                    <parameter value="password" name="network.ssl.trustStorePassword"/>
+                </parameters>
+            </socket>
+            <socket implementation="com.orientechnologies.orient.server.network.OServerTLSSocketFactory" name="https">
+                <parameters>
+                    <parameter value="false" name="network.ssl.clientAuth"/>
+                    <parameter value="config/cert/orientdb.ks" name="network.ssl.keyStore"/>
+                    <parameter value="password" name="network.ssl.keyStorePassword"/>
+                    <parameter value="config/cert/orientdb.ks" name="network.ssl.trustStore"/>
+                    <parameter value="password" name="network.ssl.trustStorePassword"/>
+                </parameters>
+            </socket>
+        </sockets>
+        <protocols>
+            <protocol implementation="com.orientechnologies.orient.server.network.protocol.binary.ONetworkProtocolBinary" name="binary"/>
+            <protocol implementation="com.orientechnologies.orient.server.network.protocol.http.ONetworkProtocolHttpDb" name="http"/>
+        </protocols>
+        <listeners>
+            <listener protocol="binary" socket="default" port-range="2424-2430" ip-address="0.0.0.0"/>
+            <listener protocol="http" socket="default" port-range="2480-2490" ip-address="0.0.0.0">
+                <commands>
+                    <command implementation="com.orientechnologies.orient.server.network.protocol.http.command.get.OServerCommandGetStaticContent" pattern="GET|www GET|studio/ GET| GET|*.htm GET|*.html GET|*.xml GET|*.jpeg GET|*.jpg GET|*.png GET|*.gif GET|*.js GET|*.css GET|*.swf GET|*.ico GET|*.txt GET|*.otf GET|*.pjs GET|*.svg GET|*.json GET|*.woff GET|*.woff2 GET|*.ttf GET|*.svgz" stateful="false">
+                        <parameters>
+                            <entry value="Cache-Control: no-cache, no-store, max-age=0, must-revalidate\r\nPragma: no-cache" name="http.cache:*.htm *.html"/>
+                            <entry value="Cache-Control: max-age=120" name="http.cache:default"/>
+                        </parameters>
+                    </command>
+                    <command implementation="com.orientechnologies.orient.server.network.protocol.http.command.get.OServerCommandGetGephi" pattern="GET|gephi/*" stateful="false"/>
+                </commands>
+                <parameters>
+                    <parameter value="utf-8" name="network.http.charset"/>
+                    <parameter value="true" name="network.http.jsonResponseError"/>
+                </parameters>
+            </listener>
+        </listeners>
+    </network>
+    <storages/>
+    <users>
+        <user resources="*" password="{PBKDF2WithHmacSHA256}CCF0015F982ECE43DE1F489B120D71EAD4E35F87817DEF99:E74CD30E8601516B75936705F7B2115532A5913EEB71C669:65536" name="root"/>
+        <user resources="connect,server.listDatabases,server.dblist" password="{PBKDF2WithHmacSHA256}96F1AF3D94F3685A43AD89C941F363DB492A9F2216BB43E7:AA74E8C34F3CAF9081FFECBBAF29C3CD2604F3A48CA8CD11:65536" name="guest"/>
+    </users>
+    <properties>
+        <entry value="false" name="profiler.enabled"/>
+    </properties>
+    <isAfterFirstTime>true</isAfterFirstTime>
+</orient-server>
