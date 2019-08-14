@@ -1,0 +1,22 @@
+doctype html
+html
+    head
+        mata(charset='utf-8')
+    body
+        h1
+            a(href='/login') Resister
+
+    acticle
+        form(action="/login/register", method='post')
+            p
+                input(type='text', name='username',placeholder='username' )
+            p
+                input(type='password', name='password',placeholder='password' )
+            
+            p
+                input(type='text', name='email',placeholder='E-mail' )
+            
+            p
+                input(type='submit', value='sign up')
+
+        a(href='/login') Back
