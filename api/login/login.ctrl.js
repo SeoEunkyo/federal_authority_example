@@ -21,6 +21,22 @@ const insertUser = (req,res) =>{
 
         var sql = `insert into user (username, password, salt, email) 
         values(:username,:password,:salt,:email)`
+        db.query(sql, {params:user}).then((result) => {
+            
+            return res.redirect('/login/success')
+            console.log("jjjjj")
+            
+            //req.login(user, (err)=>{
+            //    req.session.save(()=>{
+            //        res.done('helloworld')
+            //    })
+            //})
+
+        }, (err) =>{
+            console.log(err)
+            res.status(500)
+        })
+
 
 
 })}
@@ -44,15 +60,18 @@ const localStrategy = new LocalStrategy(
                 }
             })
         })
-
-
-
-
         // 로그인 실패 할 경우는 done(null, false, {message:"incorrect ID & Password"})
     }
 
 )
 
 
+const loginsuccess = (req, res)=>{
+    if(req.session.username){
+        console.log('session nusername : ' + req.session.username)
+    }
 
-module.exports ={index, localStrategy, register,insertUser}
+}
+
+
+module.exports ={index, localStrategy, register,insertUser,loginsuccess}

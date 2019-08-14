@@ -1,0 +1,140 @@
+
+2019-08-14 15:00:29:928 INFO  Windows OS is detected, 262144 limit of open files will be set for the disk cache. [ONative]
+2019-08-14 15:00:29:959 INFO  Loading configuration from: C:/Users/eunkyo.seo/Desktop/nodejs/federal_authority/orientdb-3.0.22/config/orientdb-server-config.xml... [OServerConfigurationLoaderXml]
+2019-08-14 15:00:30:178 INFO  OrientDB Server v3.0.22 - Veloce (build 8afc634a2ea9c351898ae57dee8d739ff4851252, branch 3.0.x) is starting up... [OServer]
+2019-08-14 15:00:30:271 INFO  8467140608 B/8074 MB/7 GB of physical memory were detected on machine [ONative]
+2019-08-14 15:00:30:271 INFO  Detected memory limit for current process is 8467140608 B/8074 MB/7 GB [ONative]
+2019-08-14 15:00:30:271 INFO  JVM can use maximum 1963MB of heap memory [OMemoryAndLocalPaginatedEnginesInitializer]
+2019-08-14 15:00:30:287 INFO  Because OrientDB is running outside a container 12% of memory will be left unallocated according to the setting 'memory.leftToOS' not taking into account heap memory [OMemoryAndLocalPaginatedEnginesInitializer]
+2019-08-14 15:00:30:287 INFO  OrientDB auto-config DISKCACHE=5,142MB (heap=1,963MB os=8,074MB) [orientechnologies]
+2019-08-14 15:00:30:287 INFO  System is started under an effective user : `eunkyo.seo` [OEngineLocalPaginated]
+2019-08-14 15:00:30:287 INFO  Allocation of 78158 pages. [OEngineLocalPaginated]
+2019-08-14 15:00:31:565 INFO  WAL maximum segment size is set to 6,289 MB [OrientDBDistributed]
+2019-08-14 15:00:31:567 INFO  Databases directory: C:\Users\eunkyo.seo\Desktop\nodejs\federal_authority\orientdb-3.0.22\databases [OServer]
+2019-08-14 15:00:31:674 INFO  Page size for WAL located in C:\Users\eunkyo.seo\Desktop\nodejs\federal_authority\orientdb-3.0.22\databases\OSystem is set to 4096 bytes. [OCASDiskWriteAheadLog]
+2019-08-14 15:00:31:823 WARNI Storage 'OSystem' was not closed properly. Will try to recover from write ahead log [OLocalPaginatedStorage]
+2019-08-14 15:00:31:824 INFO  Looking for last checkpoint... [OLocalPaginatedStorage]
+2019-08-14 15:00:31:826 INFO  Checkpoints are absent, the restore will start from the beginning. [OLocalPaginatedStorage]
+2019-08-14 15:00:31:827 INFO  Data restore procedure is started. [OLocalPaginatedStorage]
+2019-08-14 15:00:31:849 WARNI Record com.orientechnologies.orient.core.storage.impl.local.paginated.wal.cas.OEmptyWALRecord{lsn=OLogSequenceNumber{segment=1, position=18}} will be skipped during data restore [OLocalPaginatedStorage]
+2019-08-14 15:00:31:851 INFO  1 operations were processed, current LSN is OLogSequenceNumber{segment=1, position=18} last LSN is OLogSequenceNumber{segment=2, position=18} [OLocalPaginatedStorage]
+2019-08-14 15:00:31:857 WARNI Non tx operation was used during data modification we will need index rebuild. [OLocalPaginatedStorage]
+2019-08-14 15:00:31:966 WARNI Record com.orientechnologies.orient.core.storage.impl.local.paginated.wal.cas.OEmptyWALRecord{lsn=OLogSequenceNumber{segment=2, position=18}} will be skipped during data restore [OLocalPaginatedStorage]
+2019-08-14 15:00:32:571 INFO  Storage data recover was completed [OLocalPaginatedStorage]
+2019-08-14 15:00:32:871 INFO  Storage 'plocal:C:\Users\eunkyo.seo\Desktop\nodejs\federal_authority\orientdb-3.0.22\databases/OSystem' is opened under OrientDB distribution : 3.0.22 - Veloce (build 8afc634a2ea9c351898ae57dee8d739ff4851252, branch 3.0.x) [OLocalPaginatedStorage]
+2019-08-14 15:00:33:106 INFO  {db=OSystem} Wait till indexes restore after crash was finished. [OIndexManagerShared]
+2019-08-14 15:00:33:231 INFO  {db=OSystem} Index 'OUser.name' is a durable automatic index and will be added as is without rebuilding [OIndexManagerShared$RecreateIndexesTask]
+2019-08-14 15:00:33:231 INFO  {db=OSystem} Index 'OUser.name' was added in DB index list [OIndexManagerShared$RecreateIndexesTask]
+2019-08-14 15:00:33:245 INFO  {db=OSystem} Index 'ORole.name' is a durable automatic index and will be added as is without rebuilding [OIndexManagerShared$RecreateIndexesTask]
+2019-08-14 15:00:33:248 INFO  {db=OSystem} Index 'ORole.name' was added in DB index list [OIndexManagerShared$RecreateIndexesTask]
+2019-08-14 15:00:33:250 INFO  {db=OSystem} Index 'dictionary' is a durable non-automatic index and will be added as is without rebuilding [OIndexManagerShared$RecreateIndexesTask]
+2019-08-14 15:00:33:250 INFO  {db=OSystem} Index 'dictionary' was added in DB index list [OIndexManagerShared$RecreateIndexesTask]
+2019-08-14 15:00:33:250 INFO  {db=OSystem} Index 'OFunction.name' is a durable automatic index and will be added as is without rebuilding [OIndexManagerShared$RecreateIndexesTask]
+2019-08-14 15:00:33:250 INFO  {db=OSystem} Index 'OFunction.name' was added in DB index list [OIndexManagerShared$RecreateIndexesTask]
+2019-08-14 15:00:33:266 INFO  {db=OSystem} 4 indexes were restored successfully, 0 errors [OIndexManagerShared$RecreateIndexesTask]
+2019-08-14 15:00:33:297 INFO  {db=OSystem} Indexes restore after crash was finished. [OIndexManagerShared]
+2019-08-14 15:00:34:355 INFO  Listening binary connections on 0.0.0.0:2424 (protocol v.37, socket=default) [OServerNetworkListener]
+2019-08-14 15:00:34:355 INFO  Listening http connections on 0.0.0.0:2480 (protocol v.10, socket=default) [OServerNetworkListener]
+2019-08-14 15:00:34:355 INFO  Installing dynamic plugin 'orientdb-etl-3.0.22.jar'... [OServerPluginManager]
+2019-08-14 15:00:34:371 INFO  Installing dynamic plugin 'orientdb-neo4j-importer-plugin-3.0.22-dist.jar'... [OServerPluginManager]
+2019-08-14 15:00:34:371 INFO  Installing dynamic plugin 'orientdb-studio-3.0.22.zip'... [OServerPluginManager]
+2019-08-14 15:00:34:387 INFO  Installing dynamic plugin 'orientdb-teleporter-3.0.22.jar'... [OServerPluginManager]
+2019-08-14 15:00:34:402 INFO  ODefaultPasswordAuthenticator is active [ODefaultPasswordAuthenticator]
+2019-08-14 15:00:34:402 INFO  OServerConfigAuthenticator is active [OServerConfigAuthenticator]
+2019-08-14 15:00:34:402 INFO  OSystemUserAuthenticator is active [OSystemUserAuthenticator]
+2019-08-14 15:00:34:402 INFO  [OVariableParser.resolveVariables] Property not found: distributed [orientechnologies]
+2019-08-14 15:00:34:418 WARNI Authenticated clients can execute any kind of code into the server by using the following allowed languages: [sql] [OServerSideScriptInterpreter]
+2019-08-14 15:00:35:706 INFO  OrientDB Studio available at http://127.0.0.1:2480/studio/index.html [OServer]
+2019-08-14 15:00:35:707 INFO  OrientDB Server is active v3.0.22 - Veloce (build 8afc634a2ea9c351898ae57dee8d739ff4851252, branch 3.0.x). [OServer]
+2019-08-14 15:01:03:101 INFO  Page size for WAL located in C:\Users\eunkyo.seo\Desktop\nodejs\federal_authority\orientdb-3.0.22\databases\loginTest is set to 4096 bytes. [OCASDiskWriteAheadLog]
+2019-08-14 15:01:03:348 WARNI Storage 'loginTest' was not closed properly. Will try to recover from write ahead log [OLocalPaginatedStorage]
+2019-08-14 15:01:03:350 INFO  Looking for last checkpoint... [OLocalPaginatedStorage]
+2019-08-14 15:01:03:353 INFO  Checkpoints are absent, the restore will start from the beginning. [OLocalPaginatedStorage]
+2019-08-14 15:01:03:354 INFO  Data restore procedure is started. [OLocalPaginatedStorage]
+2019-08-14 15:01:03:364 WARNI Record com.orientechnologies.orient.core.storage.impl.local.paginated.wal.cas.OEmptyWALRecord{lsn=OLogSequenceNumber{segment=1, position=18}} will be skipped during data restore [OLocalPaginatedStorage]
+2019-08-14 15:01:03:365 INFO  1 operations were processed, current LSN is OLogSequenceNumber{segment=1, position=18} last LSN is OLogSequenceNumber{segment=2, position=18} [OLocalPaginatedStorage]
+2019-08-14 15:01:03:369 WARNI Non tx operation was used during data modification we will need index rebuild. [OLocalPaginatedStorage]
+2019-08-14 15:01:03:471 WARNI Record com.orientechnologies.orient.core.storage.impl.local.paginated.wal.cas.OEmptyWALRecord{lsn=OLogSequenceNumber{segment=2, position=18}} will be skipped during data restore [OLocalPaginatedStorage]
+2019-08-14 15:01:04:033 INFO  Storage data recover was completed [OLocalPaginatedStorage]
+2019-08-14 15:01:04:051 INFO  Storage 'plocal:C:\Users\eunkyo.seo\Desktop\nodejs\federal_authority\orientdb-3.0.22\databases/loginTest' is opened under OrientDB distribution : 3.0.22 - Veloce (build 8afc634a2ea9c351898ae57dee8d739ff4851252, branch 3.0.x) [OLocalPaginatedStorage]
+2019-08-14 15:01:04:065 INFO  {db=loginTest} Wait till indexes restore after crash was finished. [OIndexManagerShared]
+2019-08-14 15:01:04:080 INFO  {db=loginTest} Index 'OFunction.name' is a durable automatic index and will be added as is without rebuilding [OIndexManagerShared$RecreateIndexesTask]
+2019-08-14 15:01:04:082 INFO  {db=loginTest} Index 'OFunction.name' was added in DB index list [OIndexManagerShared$RecreateIndexesTask]
+2019-08-14 15:01:04:083 INFO  {db=loginTest} Index 'ORole.name' is a durable automatic index and will be added as is without rebuilding [OIndexManagerShared$RecreateIndexesTask]
+2019-08-14 15:01:04:087 INFO  {db=loginTest} Index 'ORole.name' was added in DB index list [OIndexManagerShared$RecreateIndexesTask]
+2019-08-14 15:01:04:088 INFO  {db=loginTest} Index 'dictionary' is a durable non-automatic index and will be added as is without rebuilding [OIndexManagerShared$RecreateIndexesTask]
+2019-08-14 15:01:04:093 INFO  {db=loginTest} Index 'dictionary' was added in DB index list [OIndexManagerShared$RecreateIndexesTask]
+2019-08-14 15:01:04:094 INFO  {db=loginTest} Index 'OUser.name' is a durable automatic index and will be added as is without rebuilding [OIndexManagerShared$RecreateIndexesTask]
+2019-08-14 15:01:04:097 INFO  {db=loginTest} Index 'OUser.name' was added in DB index list [OIndexManagerShared$RecreateIndexesTask]
+2019-08-14 15:01:04:100 INFO  {db=loginTest} 4 indexes were restored successfully, 0 errors [OIndexManagerShared$RecreateIndexesTask]
+2019-08-14 15:01:04:124 INFO  {db=loginTest} Indexes restore after crash was finished. [OIndexManagerShared]
+2019-08-14 15:01:42:761 INFO  Page size for WAL located in C:\Users\eunkyo.seo\Desktop\nodejs\federal_authority\orientdb-3.0.22\databases\logintest is set to 4096 bytes. [OCASDiskWriteAheadLog]Exception `513BC768` in storage `plocal:C:\Users\eunkyo.seo\Desktop\nodejs\federal_authority\orientdb-3.0.22\databases/logintest`: 3.0.22 - Veloce (build 8afc634a2ea9c351898ae57dee8d739ff4851252, branch 3.0.x)
+java.lang.IllegalStateException: File is allowed to be opened only once.
+File is already opened under: 
+----------------------------------------------------------------------------------------------------
+	java.lang.Thread.getStackTrace(Unknown Source)
+	com.orientechnologies.orient.core.storage.fs.OFileClassic.acquireExclusiveAccess(OFileClassic.java:679)
+	com.orientechnologies.orient.core.storage.fs.OFileClassic.open(OFileClassic.java:623)
+	com.orientechnologies.orient.core.storage.cache.local.OWOWCache.readNameIdMapV2(OWOWCache.java:1890)
+	com.orientechnologies.orient.core.storage.cache.local.OWOWCache.initNameIdMapping(OWOWCache.java:1781)
+	com.orientechnologies.orient.core.storage.cache.local.OWOWCache.loadRegisteredFiles(OWOWCache.java:479)
+	com.orientechnologies.orient.core.storage.disk.OLocalPaginatedStorage.initWalAndDiskCache(OLocalPaginatedStorage.java:632)
+	com.orientechnologies.orient.core.storage.impl.local.OAbstractPaginatedStorage.open(OAbstractPaginatedStorage.java:371)
+	com.orientechnologies.orient.core.db.OrientDBEmbedded.openNoAuthenticate(OrientDBEmbedded.java:236)
+	com.orientechnologies.orient.core.db.OrientDBEmbedded.openNoAuthenticate(OrientDBEmbedded.java:59)
+	com.orientechnologies.orient.server.OServer.openDatabase(OServer.java:936)
+	com.orientechnologies.orient.server.OServer.openDatabase(OServer.java:908)
+	com.orientechnologies.orient.server.network.protocol.http.command.OServerCommandAuthenticatedDbAbstract.authenticate(OServerCommandAuthenticatedDbAbstract.java:162)
+	com.orientechnologies.orient.server.network.protocol.http.command.OServerCommandAuthenticatedDbAbstract.beforeExecute(OServerCommandAuthenticatedDbAbstract.java:122)
+	com.orientechnologies.orient.server.network.protocol.http.command.get.OServerCommandGetConnect.beforeExecute(OServerCommandGetConnect.java:50)
+	com.orientechnologies.orient.server.network.protocol.http.ONetworkProtocolHttpAbstract.service(ONetworkProtocolHttpAbstract.java:225)
+	com.orientechnologies.orient.server.network.protocol.http.ONetworkProtocolHttpAbstract.execute(ONetworkProtocolHttpAbstract.java:707)
+	com.orientechnologies.common.thread.OSoftThread.run(OSoftThread.java:69)
+----------------------------------------------------------------------------------------------------
+
+	at com.orientechnologies.orient.core.storage.fs.OFileClassic.acquireExclusiveAccess(OFileClassic.java:675)
+	at com.orientechnologies.orient.core.storage.fs.OFileClassic.open(OFileClassic.java:623)
+	at com.orientechnologies.orient.core.storage.cache.local.OWOWCache.readNameIdMapV2(OWOWCache.java:1890)
+	at com.orientechnologies.orient.core.storage.cache.local.OWOWCache.initNameIdMapping(OWOWCache.java:1781)
+	at com.orientechnologies.orient.core.storage.cache.local.OWOWCache.loadRegisteredFiles(OWOWCache.java:479)
+	at com.orientechnologies.orient.core.storage.disk.OLocalPaginatedStorage.initWalAndDiskCache(OLocalPaginatedStorage.java:632)
+	at com.orientechnologies.orient.core.storage.impl.local.OAbstractPaginatedStorage.open(OAbstractPaginatedStorage.java:371)
+	at com.orientechnologies.orient.core.db.OrientDBEmbedded.open(OrientDBEmbedded.java:281)
+	at com.orientechnologies.orient.core.db.OrientDBEmbedded.open(OrientDBEmbedded.java:226)
+	at com.orientechnologies.orient.server.OServer.openDatabase(OServer.java:939)
+	at com.orientechnologies.orient.server.OServer.openDatabase(OServer.java:913)
+	at com.orientechnologies.orient.server.OConnectionBinaryExecutor.executeDatabaseOpen(OConnectionBinaryExecutor.java:1131)
+	at com.orientechnologies.orient.client.remote.message.OOpenRequest.execute(OOpenRequest.java:150)
+	at com.orientechnologies.orient.server.network.protocol.binary.ONetworkProtocolBinary.sessionRequest(ONetworkProtocolBinary.java:309)
+	at com.orientechnologies.orient.server.network.protocol.binary.ONetworkProtocolBinary.execute(ONetworkProtocolBinary.java:211)
+	at com.orientechnologies.common.thread.OSoftThread.run(OSoftThread.java:69)
+Exception `1D61071C` in storage `plocal:C:\Users\eunkyo.seo\Desktop\nodejs\federal_authority\orientdb-3.0.22\databases/loginTest`: 3.0.22 - Veloce (build 8afc634a2ea9c351898ae57dee8d739ff4851252, branch 3.0.x)
+com.orientechnologies.orient.core.sql.OCommandSQLParsingException: Error on parsing command: Class user not found in database
+Command: INSERT INTO user (username, password, salt, email) VALUES ("123123", "RAei/cIRv4Vj6dNewY07VvsuyiBk7xsrzArykHd0u1cPtv59GZp56s6gwp6Y62sr2iXntOprUTnFFE54oFgviqa/6kVtaI+wJm9qBLzzsf6726eFo9XvmRbeyDiRfV1UFPbCiPuNKsi1u2KCEntbccO6GrpS7f+vGh9cqT8j4dc=", "PtP6o+tEtyTFOtQz8aTy0lMmziEQdz8k3d4WEK6oASaX7gCfi6Tsvbwdw0pUlg+i5fUldiJorxefAka2xLSAkg==", "1")
+-------------------^
+	DB name="loginTest"
+	at com.orientechnologies.orient.core.sql.OCommandExecutorSQLAbstract.throwParsingException(OCommandExecutorSQLAbstract.java:100)
+	at com.orientechnologies.orient.core.sql.OCommandExecutorSQLInsert.parse(OCommandExecutorSQLInsert.java:123)
+	at com.orientechnologies.orient.core.sql.OCommandExecutorSQLInsert.parse(OCommandExecutorSQLInsert.java:63)
+	at com.orientechnologies.orient.core.sql.OCommandExecutorSQLDelegate.parse(OCommandExecutorSQLDelegate.java:58)
+	at com.orientechnologies.orient.core.sql.OCommandExecutorSQLDelegate.parse(OCommandExecutorSQLDelegate.java:39)
+	at com.orientechnologies.orient.core.storage.impl.local.OAbstractPaginatedStorage.command(OAbstractPaginatedStorage.java:3920)
+	at com.orientechnologies.orient.core.command.OCommandRequestTextAbstract.execute(OCommandRequestTextAbstract.java:68)
+	at com.orientechnologies.orient.server.OConnectionBinaryExecutor.executeCommand(OConnectionBinaryExecutor.java:727)
+	at com.orientechnologies.orient.client.remote.message.OCommandRequest.execute(OCommandRequest.java:103)
+	at com.orientechnologies.orient.server.network.protocol.binary.ONetworkProtocolBinary.sessionRequest(ONetworkProtocolBinary.java:309)
+	at com.orientechnologies.orient.server.network.protocol.binary.ONetworkProtocolBinary.execute(ONetworkProtocolBinary.java:211)
+	at com.orientechnologies.common.thread.OSoftThread.run(OSoftThread.java:69)
+
+2019-08-14 15:47:34:031 INFO  Page size for WAL located in C:\Users\eunkyo.seo\Desktop\nodejs\federal_authority\orientdb-3.0.22\databases\demodb is set to 4096 bytes. [OCASDiskWriteAheadLog]
+2019-08-14 15:47:36:552 WARNI Storage 'demodb' was not closed properly. Will try to recover from write ahead log [OLocalPaginatedStorage]
+2019-08-14 15:47:36:553 INFO  Looking for last checkpoint... [OLocalPaginatedStorage]
+2019-08-14 15:47:36:556 INFO  Found FUZZY checkpoint. [OLocalPaginatedStorage]
+2019-08-14 15:47:36:558 INFO  Data restore procedure from FUZZY checkpoint is started. [OLocalPaginatedStorage]
+2019-08-14 15:47:36:560 WARNI Record com.orientechnologies.orient.core.storage.impl.local.paginated.wal.cas.OEmptyWALRecord{lsn=OLogSequenceNumber{segment=5, position=18}} will be skipped during data restore [OLocalPaginatedStorage]
+2019-08-14 15:47:36:560 INFO  1 operations were processed, current LSN is OLogSequenceNumber{segment=5, position=18} last LSN is OLogSequenceNumber{segment=6, position=18} [OLocalPaginatedStorage]
+2019-08-14 15:47:36:560 WARNI Record OFuzzyCheckpointStartRecord{lsn=OLogSequenceNumber{segment=5, position=4114}} com.orientechnologies.orient.core.storage.impl.local.paginated.wal.OFuzzyCheckpointStartRecord{lsn=null, previousCheckpoint=OLogSequenceNumber{segment=4, position=18}} will be skipped during data restore [OLocalPaginatedStorage]
+2019-08-14 15:47:36:561 WARNI Record com.orientechnologies.orient.core.storage.impl.local.paginated.wal.OFuzzyCheckpointEndRecord{lsn=OLogSequenceNumber{segment=5, position=4152}} will be skipped during data restore [OLocalPaginatedStorage]
+2019-08-14 15:47:36:561 WARNI Record com.orientechnologies.orient.core.storage.impl.local.paginated.wal.cas.OEmptyWALRecord{lsn=OLogSequenceNumber{segment=6, position=18}} will be skipped during data restore [OLocalPaginatedStorage]
+2019-08-14 15:47:36:588 INFO  Storage data recover was completed [OLocalPaginatedStorage]
+2019-08-14 15:47:36:644 INFO  Storage 'plocal:C:\Users\eunkyo.seo\Desktop\nodejs\federal_authority\orientdb-3.0.22\databases/demodb' is opened under OrientDB distribution : 3.0.22 - Veloce (build 8afc634a2ea9c351898ae57dee8d739ff4851252, branch 3.0.x) [OLocalPaginatedStorage]

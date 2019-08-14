@@ -28,7 +28,7 @@ module.exports = function(passport){
     router.get('/register', ctrl.register)
     router.post('/register', ctrl.insertUser)
 
-    
+    router.get('/success', ctrl.loginsuccess)
     
     router.post('/',passport.authenticate('local', 
                     { successRedirect: '/login/success',
@@ -37,6 +37,7 @@ module.exports = function(passport){
                     }
                 ))
     
+                
     //router.get('/detail/:detailid', ctrl.download)
     //router.post('/', ctrl.convert)
      
