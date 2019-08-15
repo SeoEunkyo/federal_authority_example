@@ -4,5 +4,9 @@ html
         mata(charset='utf-8')
     body
         h1
-            a(href='/login') login success
-            a username=_username
+            p
+                a(href='/login') login success
+                a       #{_username}
+            p   
+                a(href='/login/signout') Log out
+

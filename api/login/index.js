@@ -12,27 +12,27 @@ module.exports = function(passport){
         done(null, user.username);
     }); 
     passport.deserializeUser(function(username, done) {
-        var sql = `select * from user where username=:username`
-        db.query(sql, {params:{username:username}}).then((result)=>{
-            if(result.length===0){
-                done('There is no user')
-            }else{
-                done(null,result[0])
-            }
-        })
+        ctrl.deserializeUser(username,done)
         //done(null, user);
     });
-    passport.use(ctrl.localStrategy)
+
+    passport.use(new LocalStrategy(
+        function(username, password, done){
+            ctrl.localStrategy(username, password, done)
+        }
+    ));
+
     
     router.get('/', ctrl.index)
     router.get('/register', ctrl.register)
     router.post('/register', ctrl.insertUser)
+    router.get('/signout',ctrl.singout)
 
     router.get('/success', ctrl.loginsuccess)
     
     router.post('/',passport.authenticate('local', 
                     { successRedirect: '/login/success',
-                      failureRedirect: '/',
+                      failureRedirect: '/login',
                       failureFlash: false 
                     }
                 ))
