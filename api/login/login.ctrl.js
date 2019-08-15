@@ -83,7 +83,7 @@ const singout =(req,res) =>{
     console.log( 'singout: '+  req.session.passport.user)
     delete  req.session.passport.user;
     req.session.save(function(){
-        //res.redirect('/login');
+        res.redirect('/login');
       });
 }
 
