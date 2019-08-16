@@ -1,5 +1,6 @@
 const db = require('../orientdb/dbconnection')
 const bkfd2Password = require("pbkdf2-password")
+
 var hasher = bkfd2Password()
 
 const index = (req,res) => { 
@@ -87,5 +88,41 @@ const singout =(req,res) =>{
       });
 }
 
+const facebook=(req,res)=>{
 
-module.exports ={index, localStrategy, register,insertUser,loginsuccess,deserializeUser,singout}
+}
+
+
+const facebookStrategy = (accessToken, refreshToken, profile, done) =>{
+    console.log(profile)
+     // 로그인 정보가 디비에 있는 지 확인하고 없으면 db에 정보 추가 세션 세이브도 해주고..  이미 회원이 facebook에 로그인 되었다 facebook에 의해서.
+
+    var username = 'facebook:'+profile.id
+    
+    var sql = `select * from user where username=:username`
+    //console.log('sql :' + sql)
+    db.query(sql, {params:{username:"face:"+username}}).then((result)=>{
+        if(result.length==0){
+            // db에 insert 해준다 .. 상황에 따라선 추가 적인 내용을 받을수 있음 .
+            sql = `insert into user (username, email) 
+                    values(:username, :email)`
+            var user = { 
+                username:"facebook:"+profile.id,
+                email:req.body.email
+            }
+            db.query(sql, {params:user}).then((result) => { 
+                return done(null,user)
+             })
+            return done(null,false)
+        }else{
+            var user = result[0]
+            return done(null,user)
+
+        }
+    })
+    // 로그인 실패 할 경우는 done(null, false, {message:"incorrect ID & Password"})
+}
+
+
+
+module.exports ={index, localStrategy, register,insertUser,loginsuccess,deserializeUser,singout, facebook, facebookStrategy}

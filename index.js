@@ -10,7 +10,7 @@ const bkfd2Password = require("pbkdf2-password")
 var hasher = bkfd2Password()
 // 로그인 패스포트로 .. 
 var passport = require('passport')
-LocalStrategy = require('passport-local').Strategy;
+
 
 
 //const xmltocsv = require('./api/xmltoxlsx')
